@@ -1,0 +1,12 @@
+
+spring:
+  application:
+    name: APIGATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        - id: userservice
+          uri: lb://USERSERVICE
+          predicates:
+            - Path=/users/*,/users
